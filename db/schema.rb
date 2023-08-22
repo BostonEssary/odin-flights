@@ -13,6 +13,8 @@
 ActiveRecord::Schema[7.0].define(version: 2023_08_21_213925) do
   create_table "airports", force: :cascade do |t|
     t.string "code", null: false
+    t.string "name", null: false
+    t.string "city", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["code"], name: "index_airports_on_code", unique: true
@@ -20,7 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_21_213925) do
 
   create_table "flights", force: :cascade do |t|
     t.datetime "takeoff"
-    t.integer "duration"
+    t.integer "duration_in_minutes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "departure_airport_id"
