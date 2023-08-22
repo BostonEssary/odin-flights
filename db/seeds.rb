@@ -20,7 +20,7 @@ Airport.create!([{
   
   p "Created #{Airport.count} Airports"
 
-  Flight.create([
+Flight.create!([
     {
       
       :takeoff => DateTime.strptime("09/01/2009 17:00", "%m/%d/%Y %H:%M"),
@@ -32,16 +32,16 @@ Airport.create!([{
       
         :takeoff => DateTime.strptime("09/01/2009 17:00", "%m/%d/%Y %H:%M"),
         :duration    => 2,
-        :departure_airport_id => 3,
+        :departure_airport_id => 2,
         :arrival_airport_id => 1
       },
       {
       
         :takeoff => DateTime.strptime("09/01/2009 17:00", "%m/%d/%Y %H:%M"),
         :duration    => 1,
-        :departure_airport_id => 2,
-        :arrival_airport_id => 3
-      },
+        :departure_airport_id => 3,
+        :arrival_airport_id => 1
+      }
 
     ])
 
