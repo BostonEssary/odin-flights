@@ -1,5 +1,9 @@
-<%= select_tag(:departure_airport_id, options_for_select(@departure_airports)) %>
-<%= select_tag(:arrival_airport_id, options_for_select(@arrival_airports)) %>
-<%= select_tag(:passengers, options_for_select((1..4).to_a)) %>
-<%= select_tag "takeoff", options_from_collection_for_select(Flight.all, :takeoff, :takeoff_date_formatted) %>
-<%= render "layouts/search_form" %>
+
+<%= form_with url: "/flights", method: :get do |form| %>
+  <%= form.label :query, "Search for:" %>
+    <%= select_tag(:passengers, options_for_select((1..4).to_a)) %>
+    <%= select_tag(:departure_airport_id, options_for_select(@departure_airports)) %>
+    <%= select_tag(:arrival_airport_id, options_for_select(@arrival_airports)) %>
+    <%= select_tag(:takeoff, options_from_collection_for_select(Flight.all, :takeoff, :takeoff_date_formatted)) %>
+  <%= form.submit "Search" %>
+<% end %>
