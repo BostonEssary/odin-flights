@@ -6,7 +6,14 @@ class FlightsController < ApplicationController
         
         @date = params[:takeoff]
 
-        @flights = Flight.where({arrival_airport: params[:arrival_airport], departure_airport: params[:departure_airport]})
+        @flights = Flight.where({arrival_airport: params[:arrival_airport], departure_airport: params[:departure_airport], takeoff: params[:takeoff]})
     end
 
+
+    private
+
+    def flight_params
+        params.require(:flight).permit(:arrival_airport, :departure_airport, :takeoff)
+    end
+    
 end
