@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+.flight {
+    display: flex;
+    align-items: center;
+    margin: 1em;
+}
+
+.flight-info {
+    display: flex;
+    justify-content: start;
+    text-align: left;
+    margin: .5em;
+    width: 100%;
+    border: 1px solid;
+    border-radius: 5px;
+}
+.flight-info-section {
+    margin: .5em;
+}
+
+.flight-info-section p {
+    text-decoration: underline;
+}
+
+.submit-btn {
+    margin-top: .5em;
+}

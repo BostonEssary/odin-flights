@@ -1,0 +1,45 @@
+<div class="results">
+    <% if @flights.any? %>
+    <p>Number of flights found: <%= @flights.size%></p>
+    <%= form_with url: "/bookings/new", method: :get do |form| %>
+        <% @flights.each do |flight| %>
+            <div class="flight">
+                <div class="select-flight">
+                    <%= form.radio_button :flight, flight.id%>
+                    <%= form.hidden_field :num_of_passengers, value: params[:num_of_passengers]%>
+                </div>
+                <div class="flight-info pure-g">
+                    <div class="flight-info-section pure-u-1 pure-u-md-1-3 pure-u-lg-1-6">
+                        <p>Departure Airport</p> 
+                        <%= flight.departure_airport.name%>
+                    </div>
+                    <div class="flight-info-section pure-u-1 pure-u-md-1-3 pure-u-lg-1-6">
+                        <p>Arrival Airport </p> 
+                        <%= flight.arrival_airport.name%>
+                    </div>
+                    <div class="flight-info-section pure-u-1 pure-u-md-1-3 pure-u-lg-1-6">
+                        <p>Date of flight </p> 
+                        <%= flight.takeoff_date_formatted %>
+                    </div>
+                    <div class="flight-info-section pure-u-1 pure-u-md-1-3 pure-u-lg-1-6">
+                        <p>Takeoff </p> 
+                        <%= flight.takeoff_time_formatted %>
+                    </div>
+                    <div class="flight-info-section pure-u-1 pure-u-md-1-3 pure-u-lg-1-6">
+                        <p>Duration </p>
+                        <%= flight.duration_formatted %>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        <% end %>
+        <div class="submit-btn">
+            <%= form.submit "Select Flight"%>
+        </div>
+        
+    <% end %>
+    <% else %>
+    <p>No flights for this search!</p>
+    <% end %>
+</div>
