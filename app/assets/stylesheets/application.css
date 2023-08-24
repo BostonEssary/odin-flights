@@ -14,17 +14,54 @@
  *= require_self
  */
 
+ html, body {
+    height: 100%;
+    
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    max-width: 1280px;
+    display: table-cell;
+    
+}
+
+ul{
+    list-style: none;
+}
+ .results {
+    margin: 1em;
+ }
+
 .flight {
     display: flex;
     align-items: center;
-    margin: 1em;
+    margin-bottom: 1em;
+    
+}
+
+.search-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    
+}
+
+.flight-search {
+    margin-left: .5em;
 }
 
 .flight-info {
     display: flex;
     justify-content: start;
     text-align: left;
-    margin: .5em;
+    margin-left: .5em;
     width: 100%;
     border: 1px solid;
     border-radius: 5px;
@@ -37,6 +74,11 @@
     text-decoration: underline;
 }
 
+.passenger-field {
+    margin-bottom: .5em;
+    
+}
+
 .submit-btn {
-    margin-top: .5em;
+    margin-bottom: 1em;
 }

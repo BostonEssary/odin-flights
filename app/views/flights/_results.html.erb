@@ -1,7 +1,7 @@
 <div class="results">
     <% if @flights.any? %>
     <p>Number of flights found: <%= @flights.size%></p>
-    <%= form_with url: "/bookings/new", method: :get do |form| %>
+    <%= form_with(url: "/bookings/new",  method: :get) do |form| %>
         <% @flights.each do |flight| %>
             <div class="flight">
                 <div class="select-flight">
@@ -35,7 +35,7 @@
             
         <% end %>
         <div class="submit-btn">
-            <%= form.submit "Select Flight"%>
+            <%= form.submit "Select Flight", :class => 'pure-button'%>
         </div>
         
     <% end %>
