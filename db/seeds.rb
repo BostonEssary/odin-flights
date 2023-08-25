@@ -60,28 +60,28 @@ Flight.create!([
       },
       {
       
-        :takeoff => DateTime.strptime("10/16/223 09:40", "%m/%d/%Y %H:%M"),
+        :takeoff => DateTime.strptime("10/16/2023 09:40", "%m/%d/%Y %H:%M"),
         :duration_in_minutes    => 267,
         :departure_airport_id => 2,
         :arrival_airport_id => 4
       },
       {
       
-        :takeoff => DateTime.strptime("12/13/2023 17:55", "%m/%d/%Y %H:%M"),
+        :takeoff => DateTime.strptime("9/1/2023 12:45", "%m/%d/%Y %H:%M"),
         :duration_in_minutes    => 120,
         :departure_airport_id => 4,
         :arrival_airport_id => 1
       },
       {
         
-          :takeoff => DateTime.strptime("11/22/2023 07:35", "%m/%d/%Y %H:%M"),
+          :takeoff => DateTime.strptime("7/17/2023 14:45", "%m/%d/%Y %H:%M"),
           :duration_in_minutes    => 366,
           :departure_airport_id => 5,
           :arrival_airport_id => 3
         },
         {
         
-          :takeoff => DateTime.strptime("10/16/223 09:40", "%m/%d/%Y %H:%M"),
+          :takeoff => DateTime.strptime("3/14/2023 09:40", "%m/%d/%Y %H:%M"),
           :duration_in_minutes    => 136,
           :departure_airport_id => 6,
           :arrival_airport_id => 2

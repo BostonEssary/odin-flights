@@ -1,0 +1,6 @@
+ <h2>Passengers</h2>
+    <% @booking.passengers.each do |passenger|%>
+        <p><%= passenger.name %></p>
+        <p><%= passenger.email %></p>
+        <hr />
+<% end %>
