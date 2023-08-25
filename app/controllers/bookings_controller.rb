@@ -9,7 +9,13 @@ class BookingsController < ApplicationController
 
     def create
         @booking = Booking.new(booking_params)
+        @passengers = @booking.passengers
         if @booking.save
+            
+            @passengers.each do |passenger| 
+                PassengerMailer.with(passenger: passenger, booking: @booking ).booking_email.deliver_later
+            end
+
             redirect_to @booking
         else
             render :new, status: :unprocessable_entity
