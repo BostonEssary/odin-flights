@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
         if @booking.save
             
             @passengers.each do |passenger| 
-                PassengerMailer.with(passenger: passenger, booking: @booking ).booking_email.deliver_later
+                PassengerMailer.with(passenger: passenger, booking: @booking , flight: @booking.flight).booking_email.deliver_later
             end
 
             redirect_to @booking

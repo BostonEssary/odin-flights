@@ -6,7 +6,7 @@
   <body>
     <h1>Here is your booking information, <%= @passenger.name %></h1>
     <p>
-      <%= @booking.flight.departure_airport.name%>
+     <%= render "bookings/flight_info"%>
     </p>
     <p>
       
